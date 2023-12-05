@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="TextBox1.Text" xml:space="preserve">
+    <value>a b c ch d f g i j k l m n ñ o p r q s t u v w y z 0 1 2 3 4 5 6 7 8 9 0 . , ? " /
+eish 0 eish eish e i s h eish 0 eish eish e i s h eish 0 eish eish e i s h eish 0 eish eish e i s h eish 0 eish eish e i s h eish 0 eish eish e i s h eish 0 eish eish e i s h eish 0 eish eish e i s h eish 0 eish eish e i s h 
+
+A principios del siglo xix, investigadores europeos avanzaron con los sistemas de señalización eléctrica, utilizando una variedad de técnicas que incluyen electricidad estática y electricidad de pila voltaica que producen cambios electroquímicos y electromagnéticos. Estos diseños experimentales fueron precursores de aplicaciones telegráficas prácticas.
+Telegraph key y sounder. La señal está «encendida» cuando se presiona el botón, y «off» cuando se libera. La longitud y el tiempo de los «dits» y «dahs» están completamente controlados por el telegrafista.
+Tras el descubrimiento de electromagnetismo por Hans Christian Ørsted en 1820 y la invención del Electroimán por William Sturgeon en 1824, hubo desarrollos en telegrafía electromagnética en Europa y América. Pulsos de corriente eléctrica eran enviados a lo largo de cables para controlar un electroimán en el instrumento receptor. Muchos de los primeros sistemas de telégrafo utilizaban un sistema de aguja única que daba un instrumento muy simple y robusto. Sin embargo, era lento, ya que el operador receptor tenía que alternar entre mirar la aguja y escribir el mensaje. En el código Morse, una desviación de la aguja a la izquierda correspondía a un «dit» y una deflexión a la derecha a un «dah»
+​Al hacer que los dos clics sonasen diferentes con un tope de marfil y otro de metal, el dispositivo de una sola aguja se convirtió en un instrumento audible, lo que llevó a su vez al sistema de telégrafo sonoro de doble placa.
+
+Radiotelegrafía y aviación
+En la década de 1890, el código Morse comenzó a usarse ampliamente para la comunicación temprana por radio antes de que fuera posible transmitir voz. A finales del siglo xix y principios del 20, la mayoría de las comunicaciones internacionales de alta velocidad utilizaban código Morse en líneas de telégrafo, cables submarinos y circuitos de radio.
+
+Aunque los transmisores anteriores eran voluminosos y el sistema de transmisión por chispa era peligroso y difícil de usar, había habido algunos intentos tempranos: En 1910, la Marina de los EE. UU. experimentó con enviar Morse desde un avión.12​ Sin embargo, la primera radiotelegrafía de aviación regular estaba en la aeronave, que tenía espacio para acomodar el equipo de radio grande y pesado entonces en uso. El mismo año, 1910, una radio en el dirigible «America» fue fundamental en la coordinación del rescate de su tripulación.13​
+
+Durante la Primera Guerra Mundial, globos Zepelín equipados con radio fueron utilizados para el bombardeo y la vigilancia naval,14​ y los buscadores de dirección de radio en tierra fueron utilizados para la navegación aérea.14​ Aeronaves aliadas y aviones militares también hicieron algún uso de la radiotelegrafía.
+
+Sin embargo, hubo poco radio aeronáutico en uso general durante la Primera Guerra Mundial, y en la década de 1920, no había ningún sistema de radio utilizado para vuelos tan importantes como el de Charles Lindbergh desde Nueva York a París en 1927. Una vez él y su Spirit of St. Louis estaban en vuelo, Lindbergh estaba verdaderamente incomunicado y solo. El código Morse en la aviación comenzó su uso regular a mediados de la década de 1920. En 1928, cuando el primer vuelo de avión fue realizado por la Southern Cross de California a Australia, uno de sus cuatro tripulantes era un operador de radio que se comunicaba con las estaciones en tierra a través de radio telégrafo.
+
+A partir de la década de 1930, tanto los pilotos civiles como los militares debían poder utilizar el código Morse, tanto para su uso con sistemas de comunicaciones tempranas como para la identificación de balizas de navegación que transmitían identificadores continuos de dos o tres letras en el código Morse. Las cartas aeronáuticas mostraban el identificador de cada ayuda de navegación junto a su ubicación en el mapa.
+
+Además, los ejércitos de campo que se mueven rápidamente no podrían haber luchado eficazmente sin radiotelegrafía; se movían más rápidamente de lo que sus servicios de comunicaciones podían poner nuevos telégrafos y líneas telefónicas. Esto se vio especialmente en las ofensivas relámpago blitzkrieg de Wehrmacht la Alemania nazi en Polonia, Bélgica, Francia (en 1940), la Unión Soviética, y en África del Norte; por el Ejército Británico en África del Norte, Italia y Países Bajos; y por el Ejército de los Estados Unidos en Francia y Bélgica (en 1944), y en el sur de Alemania en 1945.
+
+Telegrafía de flash marítimo y radiotelegrafía
+La radiotelegrafía usando el código Morse fue vital durante la Segunda Guerra Mundial, especialmente en el transporte de mensajes entre los buques de guerra y las bases navales de los beligerantes. La comunicación buque-a-buque de largo alcance era por radiotelegrafía, utilizando mensajes encriptados porque los sistemas de radio de voz en los buques entonces eran bastante limitados tanto en su alcance como en su seguridad. La radiotelegrafía también fue ampliamente utilizada por aviones de guerra, especialmente por aviones patrulla de largo alcance que eran enviados por esas fuerzas navales para explorar buques de guerra enemigos, buques de carga y buques de tropas.
+
+El código Morse se utilizó como norma internacional para los problemas marítimos hasta 1999, cuando fue reemplazado por el Sistema mundial de socorro y seguridad marítimos. Cuando la Armada Francesa dejó de usar el código Morse el 31 de enero de 1997, el mensaje final transmitido fue "Llamada a todos. Este es nuestro último mensaje antes de nuestro silencio eterno."15​
+
+Abandono de la telegrafía comercial
+
+Una clase de entrenamiento en Código Morse de la Marina de los Estados Unidos en 2015. Los marineros utilizarán sus nuevas habilidades para recoger señales de inteligencia.
+En los Estados Unidos, la última transmisión comercial del código Morse fue el 12 de julio de 1999, firmando con Samuel Morse el mensaje original de 1844.16​
+
+Incluso en 2015, la Fuerza Aérea de los Estados Unidos todavía entrena a unas diez personas al año en Morse.17​
+
+La Guardia Costera de los Estados Unidos ha cesado el uso del código Morse en la radio, y ya no monitorea ninguna frecuencia radioeléctrica para transmisiones de código Morse, incluida la frecuencia de socorro internacional de 500 kHz.18​ Sin embargo, la Comisión Federal de Comunicaciones de EE. UU. sigue otorgando licencias de operador de radiotelegrafía comercial a los solicitantes que pasan sus pruebas escritas.19​ Ha habido licenciatarios que han reactivado la antigua estación costera de Morse de California KPH y transmiten regularmente desde el sitio bajo esta señal de llamada o como KSM. Del mismo modo, algunas estaciones estadounidenses en buques museo son operadas por entusiastas de Morse.20​
+
+Funcionamiento morfológico
+La duración del punto es la mínima posible. Una raya tiene una duración de aproximadamente tres veces la del punto. Entre cada par de símbolos de una misma letra existe una ausencia de señal con duración aproximada a la de un punto. Entre las letras de una misma palabra, la ausencia es de aproximadamente tres puntos. Para la separación de palabras transmitidas el tiempo es de aproximadamente tres veces el de la raya.
+
+Toda correspondencia entre dos estaciones deberá comenzar con la señal de llamada. Para llamar, la estación que llama transmitirá el distintivo de llamada (no más de dos veces) de la estación requerida, la palabra DE seguida por su propia señal de llamada y la señal -. - a menos que haya reglas especiales peculiares al tipo de aparato utilizado.21​
+
+eih
+Usos
+En sus comienzos, el alfabeto Morse se empleó en las líneas telegráficas mediante los tendidos de cable que se fueron instalando. Más tarde, se utilizó también en las transmisiones por radio, sobre todo en el mar y en el aire, hasta que surgieron las emisoras y los receptores de radiodifusión mediante voz.
+
+En la actualidad, el alfabeto Morse tiene aplicación casi exclusiva en el ámbito de los radioaficionados y escultistas, y aunque fue exigido frecuentemente su conocimiento para la obtención de la licencia de radioperador aficionado hasta el año 2005, posteriormente, los organismos que conceden esa licencia en todos los países están invitados a dispensar del examen de telegrafía a los candidatos.22​23​
+
+También se utiliza en la aviación instrumental para sintonizar las estaciones VOR, ILS y NDB. En las cartas de navegación está indicada la frecuencia junto con una señal Morse que sirve, mediante radio, para confirmar que ha sido sintonizada correctamente.24​
+</value>
+  </data>
+  <metadata name="SaveFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>154, 17</value>
+  </metadata>
+</root>
