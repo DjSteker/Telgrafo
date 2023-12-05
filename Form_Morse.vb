@@ -400,10 +400,6 @@
                     TiempoFarnsworthLargo = 0
                 End If
 
-
-
-
-
                 If morseCodes1.ContainsKey(c) Then
                     Dim morseCode1 As String = morseCodes1(c)
                     For Each symbol As Char In morseCode1
@@ -411,26 +407,31 @@
 
                             Class_BeepBeep.BeepBeep(datosMT.Volumen, 936, TiempoPitidoCorto, "") ' Emitir un pitido corto.
                             Threading.Thread.Sleep(TiempoFarnsworthCorto)
-
+                            'Class_BeepBeep.BeepBeep(0, 936, TiempoFarnsworthCorto, "")
+                                        
                         ElseIf symbol = "·"c Then ' ................
 
                             Class_BeepBeep.BeepBeep(datosMT.Volumen, 936, TiempoPitidoCorto, "") ' Emitir un pitido corto.
                             Threading.Thread.Sleep(TiempoFarnsworthCorto)
-
+                            'Class_BeepBeep.BeepBeep(0, 936, TiempoFarnsworthCorto, "")
+                                        
                         ElseIf symbol = "-"c Then ' ---------------
 
                             Class_BeepBeep.BeepBeep(datosMT.Volumen, 936, TiempoPitidoLargo, "") ' Emitir un pitido largo.
                             Threading.Thread.Sleep(TiempoFarnsworthLargo)
+                            'Class_BeepBeep.BeepBeep(0, 936, TiempoFarnsworthLargo, "")
                                         
                         ElseIf symbol = "—" Then ' ---------------
 
                             Class_BeepBeep.BeepBeep(datosMT.Volumen, 936, TiempoPitidoLargo, "") ' Emitir un pitido largo.
                             Threading.Thread.Sleep(TiempoFarnsworthLargo)
+                            'Class_BeepBeep.BeepBeep(0, 936, TiempoFarnsworthLargo, "")
                                         
                         ElseIf symbol = " " Then
                                         
                             Threading.Thread.Sleep(TiempoEntreletras) ' Pausa entre letras.
-
+                            'Class_BeepBeep.BeepBeep(0, 936, TiempoEntreletras, "")
+                                        
                         End If
 
                         ' Pausa entre símbolos.
@@ -440,6 +441,7 @@
                                 
                     ' Pausa entre letras.
                     Threading.Thread.Sleep(CInt(TiempoEntreletras))
+                    'Class_BeepBeep.BeepBeep(0, 936, TeompoEntreSignos, "")
                                 
                 End If
             Next
