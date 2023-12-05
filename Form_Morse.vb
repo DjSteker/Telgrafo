@@ -12,17 +12,6 @@
 
     Dim datosMT As MorseTrama
 
-    '    Dim morseCodes0 As New Dictionary(Of Char, String) From {
-    '    {"A"c, ".-"}, {"B"c, "-..."}, {"C"c, "-.-."}, {"D"c, "-.."},
-    '    {"E"c, "."}, {"F"c, "..-."}, {"G"c, "--."}, {"H"c, "...."},
-    '    {"I"c, ".."}, {"J"c, ".---"}, {"K"c, "-.-"}, {"L"c, ".-.."},
-    '    {"M"c, "--"}, {"N"c, "-."}, {"Ñ"c, "--.--"}, {"O"c, "---"},
-    '    {"P"c, ".--."}, {"Q"c, "--.-"}, {"R"c, ".-."}, {"S"c, "..."},
-    '    {"T"c, "-"}, {"U"c, "..-"}, {"V"c, "...-"}, {"W"c, ".--"},
-    '    {"X"c, "-..-"}, {"Y"c, "-.--"}, {"Z"c, "--.."},
-    '    {"0", "— — — — —"}, {"1", "· — — — —"}, {"2", "· · — — —"}, {"3", "· · · — —"}, {"4", "· · · · —"}, {"5", "· · · · ·"}, {"6", "— · · · ·"}, {"7", "— — · · ·"}, {"8", "— — — · ·"}, {"9", "— — — — ·"},
-    '    {".", "· — · — · —"}, {",", "— — · · — —"}, {"?", "· · — — · ·"}, {"""", "· — · · — ·"}, {"/", "— · · — ·"}
-    '}
 
     Dim ctThread As Threading.Thread
     Event Event_Mensage(ByVal EventNumber As String)
@@ -170,83 +159,7 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button_Beep.Click
-        Try
-            'Class_BeepBeep.BeepBeep(10, 1000, 1000, "")
-            'Class_BeepBeep.BeepBeep(1000, 1000, 100, "")
-            'Class_BeepBeep.BeepBeep(20, 5000, 1000, "")
-            'Class_BeepBeep.BeepBeep(20, 10000, 1000, "")
-            Dim datosMorseTrama As New MorseTrama
-            Try
-                Dim inputText As String = TextBox1.Text.ToUpper()
-
-                If Button_Beep.Text <> "Stop" Then
-                    ctThread = New Threading.Thread(AddressOf ReadTextToMorse)
-                    AddHandler Event_Mensage, AddressOf msg
-                    Button_Beep.Text = "Stop"
-                    datosMorseTrama.text = inputText
-                    datosMorseTrama.Velocity = (TrackBar_Velocidad.Value / 500)
-                    datosMorseTrama.VelocityShort = (TrackBar_TiempoCortas.Value / 500)
-                    datosMorseTrama.VelocityLong = (TrackBar_TiempoLargas.Value / 500)
-                    datosMorseTrama.VelocityEntreSigno = (TrackBar_EspacioSigno.Value / 500)
-                    datosMorseTrama.VelocityEntreLetra = (TrackBar_LetrasEspacio.Value / 500)
-
-
-
-
-
-
-
-
-
-
-
-                    datosMT = datosMorseTrama
-
-                    ctThread.Start()
-
-                    'ctThread.Start(datosMorseTrama)
-                    Threading.Thread.Sleep(300)
-                Else
-                    Button_Beep.Text = "-"
-                    ctThread.Abort()
-                    'ctThread.Join()
-                    Button_Beep.Text = "Beep sen"
-
-                End If
-
-                'GetDNS()
-            Catch ex As Exception
-                MsgBox(ex.Message)
-            End Try
-            ' Obtén el texto del cuadro de texto.
-
-
-            '' Recorre cada letra en el texto y emite una señal de audio Morse correspondiente.
-            'For Each c As Char In inputText
-            '    If morseCodes.ContainsKey(c) Then
-            '        Dim morseCode As String = morseCodes(c)
-            '        For Each symbol As Char In morseCode
-            '            If symbol = "."c Then
-            '                Console.Beep(1000, 150 * (TrackBar1.Value / 4)) ' Emitir un pitido corto.
-            '            ElseIf symbol = "-"c Then
-            '                Console.Beep(1000, 300 * (TrackBar1.Value / 4)) ' Emitir un pitido largo.
-            '            End If
-
-            '            If symbol = "."c Then
-            '                Console.Beep(1000, 150 * (TrackBar1.Value / 4)) ' Emitir un pitido corto.
-            '            End If
-            '            ' Pausa entre símbolos.
-            '            Threading.Thread.Sleep(150 * (TrackBar1.Value / 4))
-            '        Next
-            '        ' Pausa entre letras.
-            '        Threading.Thread.Sleep(300 * (TrackBar1.Value / 4))
-            '    End If
-            'Next
-
-
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
+     
     End Sub
 
 
@@ -254,100 +167,7 @@
 
     Friend Sub ReadTextToMorse() '(ByVal datosMT As MorseTrama)
 
-        Try
-
-            Dim morseCodes1 As New Dictionary(Of Char, String) From {
-    {"A"c, ".-"}, {"B"c, "-..."}, {"C"c, "-.-."}, {"D"c, "-.."},
-    {"E"c, "."}, {"F"c, "..-."}, {"G"c, "--."}, {"H"c, "...."},
-    {"I"c, ".."}, {"J"c, ".---"}, {"K"c, "-.-"}, {"L"c, ".-.."},
-    {"M"c, "--"}, {"N"c, "-."}, {"Ñ"c, "--.--"}, {"O"c, "---"},
-    {"P"c, ".--."}, {"Q"c, "--.-"}, {"R"c, ".-."}, {"S"c, "..."},
-    {"T"c, "-"}, {"U"c, "..-"}, {"V"c, "...-"}, {"W"c, ".--"},
-    {"X"c, "-..-"}, {"Y"c, "-.--"}, {"Z"c, "--.."},
-    {"0"c, "—————"}, {"1"c, "·————"}, {"2"c, "··———"}, {"3"c, "···——"}, {"4"c, "····—"}, {"5"c, "·····"}, {"6"c, "—····"}, {"7"c, "——···"}, {"8"c, "———··"}, {"9"c, "————·"},
-    {"."c, "·—·—·—"}, {","c, "——··——"}, {"?"c, "··——··"}, {""""c, "·—··—·"}, {"/"c, "—··—·"}
-}
-            'A	· —	 	    N	— ·	 	    0	— — — — —
-            'B	— · · ·	 	Ñ	— — · — —	1	· — — — —
-            'C	— · — ·	 	O	— — —	 	2	· · — — —
-            'CH	— — — —	 	P	· — — ·	 	3	· · · — —
-            'D	— · ·	 	Q	— — · —	 	4	· · · · —
-            'E	·	 	    R	· — ·	 	5	· · · · ·
-            'F	· · — ·	 	S	· · ·	 	6	— · · · ·
-            'G	— — ·	 	T	—	 	    7	— — · · ·
-            'H	· · · ·	 	U	· · —	 	8	— — — · ·
-            'I	· ·	 	    V	· · · —	 	9	— — — — ·
-            'J	· — — —	 	W	· — —	 	.	· — · — · —
-            'K	— · —	 	X	— · · —	 	,	— — · · — —
-            'L	· — · ·	 	Y	— · — —	 	?	· · — — · ·
-            'M	— —	 	    Z	— — · ·	 	"	· — · · — ·	 	/	— · · — ·
-
-            'Dim Indice As Integer = 0
-            '' Recorre cada letra en el texto y emite una señal de audio Morse correspondiente.
-            'For Each c As Char In datosMT.text
-            '    TextBoxSelecChat(Indice)
-            '    Indice += 1
-            '    If morseCodes1.ContainsKey(c) Then
-            '        Dim morseCode1 As String = morseCodes1(c)
-            '        For Each symbol As Char In morseCode1
-            '            If symbol = "."c Then
-            '                Console.Beep(1000, CInt(150 * datosMT.Velocity * datosMT.VelocityShort)) ' Emitir un pitido corto.
-            '            ElseIf symbol = "-"c Then
-            '                Console.Beep(1000, CInt(300 * datosMT.Velocity * datosMT.VelocityLong)) ' Emitir un pitido largo.
-            '            End If
-
-            '            'If symbol = "."c Then
-            '            '    Console.Beep(1000, CInt(150 * datosMT.Velocity)) ' Emitir un pitido corto.
-            '            'End If
-            '            ' Pausa entre símbolos.
-            '            Threading.Thread.Sleep(CInt(150 * datosMT.Velocity * datosMT.VelocityEntreSigno))
-            '        Next
-            '        ' Pausa entre letras.
-            '        Threading.Thread.Sleep(CInt(300 * datosMT.Velocity * datosMT.VelocityEntreLetra))
-            '    End If
-            'Next
-
-            Dim Indice As Integer = 0
-            ' Recorre cada letra en el texto y emite una señal de audio Morse correspondiente.
-            For Each c As Char In datosMT.text
-                TextBoxSelecChat(Indice)
-                Indice += 1
-                If morseCodes1.ContainsKey(c) Then
-                    Dim morseCode1 As String = morseCodes1(c)
-                    For Each symbol As Char In morseCode1
-                        If symbol = "."c Then
-                            Console.Beep(1000, CInt(150 * datosMT.Velocity * datosMT.VelocityShort)) ' Emitir un pitido corto.
-                            Threading.Thread.Sleep(CInt(700 * datosMT.Velocity * datosMT.VelocityLong))
-                        ElseIf symbol = "·"c Then
-                            Console.Beep(1000, CInt(150 * datosMT.Velocity * datosMT.VelocityLong)) ' Emitir un pitido corto.
-                            Threading.Thread.Sleep(CInt(700 * datosMT.Velocity * datosMT.VelocityLong))
-                        ElseIf symbol = "-"c Then
-                            Console.Beep(1000, CInt(700 * datosMT.Velocity * datosMT.VelocityLong)) ' Emitir un pitido largo.
-                        ElseIf symbol = "—" Then
-                            Console.Beep(1000, CInt(700 * datosMT.Velocity * datosMT.VelocityLong)) ' Emitir un pitido largo.
-                        ElseIf symbol = " " Then
-                            'Threading.Thread.Sleep(CInt(800 * datosMT.Velocity * datosMT.VelocityEntreSigno)) ' Pausa entre letras.
-                            'Console.Beep(0, CInt(800 * datosMT.Velocity * datosMT.VelocityLong))
-                            'Threading.Thread.Sleep(CInt(100 * datosMT.Velocity * datosMT.VelocityShort))
-                        End If
-
-                        'If symbol = "."c Then
-                        '    Console.Beep(1000, CInt(150 * datosMT.Velocity)) ' Emitir un pitido corto.
-                        'End If
-                        ' Pausa entre símbolos.
-                        Threading.Thread.Sleep(CInt(10 * datosMT.Velocity * datosMT.VelocityEntreSigno))
-                    Next
-                    ' Pausa entre letras.
-                    Threading.Thread.Sleep(CInt(800 * datosMT.Velocity * datosMT.VelocityEntreLetra))
-                End If
-            Next
-
-
-
-        Catch ex As Exception
-            msg(ex.Message)
-        End Try
-
+     
     End Sub
 
 
@@ -446,20 +266,6 @@
     {"0"c, "-----"}, {"1"c, "·----"}, {"2"c, "··---"}, {"3"c, "···--"}, {"4"c, "····-"}, {"5"c, "·····"}, {"6"c, "-····"}, {"7"c, "--···"}, {"8"c, "---··"}, {"9"c, "----·"},
     {"."c, "·—·—·—"}, {","c, "——··——"}, {"?"c, "··——··"}, {""""c, "·—··—·"}, {"/"c, "—··—·"}
 }
-            'A	· —	 	    N	— ·	 	    0	— — — — —
-            'B	— · · ·	 	Ñ	— — · — —	1	· — — — —
-            'C	— · — ·	 	O	— — —	 	2	· · — — —
-            'CH	— — — —	 	P	· — — ·	 	3	· · · — —
-            'D	— · ·	 	Q	— — · —	 	4	· · · · —
-            'E	·	 	    R	· — ·	 	5	· · · · ·
-            'F	· · — ·	 	S	· · ·	 	6	— · · · ·
-            'G	— — ·	 	T	—	 	    7	— — · · ·
-            'H	· · · ·	 	U	· · —	 	8	— — — · ·
-            'I	· ·	 	    V	· · · —	 	9	— — — — ·
-            'J	· — — —	 	W	· — —	 	.	· — · — · —
-            'K	— · —	 	X	— · · —	 	,	— — · · — —
-            'L	· — · ·	 	Y	— · — —	 	?	· · — — · ·
-            'M	— —	 	    Z	— — · ·	 	"	· — · · — ·	 	/	— · · — ·
 
 
             'A   Asno / Árbol	· —	 	                                        N	Nota / Noche	— ·
@@ -477,49 +283,7 @@
             'M   Mozo / Mono / Moto	— —	 	                                    Y	Yonitoco / Yotesoplo / Yosimojo / Yoduroso	— · — —
             'Z   Zocoyula / Zozobraba / ZorroLibre	— — · ·
 
-            'A	· —
-            'B	— · · ·
-            'C	— · — ·
-            'CH	— — — —
-            'D	— · ·
-            'E	·
-            'F	· · — ·
-            'G	— — ·
-            'H	· · · ·
-            'I	· ·
-            'J	· — — —
-            'K	— · —
-            'L	· — · ·
-            'M	— —
-            'N	— ·
-            'Ñ	— — · — —
-            'O	— — —
-            'P	· — — ·
-            'Q	— — · —
-            'R	· — ·
-            'S	· · ·
-            'T	—
-            'U	· · —
-            'V	· · · —
-            'W	· — —
-            'X	— · · —
-            'Y	— · — —
-            'Z	— — · ·
-            '0	— — — — —
-            '1	· — — — —
-            '2	· · — — —
-            '3	· · · — —
-            '4	· · · · —
-            '5	· · · · ·
-            '6	— · · · ·
-            '7	— — · · ·
-            '8	— — — · ·
-            '9	— — — — ·
-            '.	· — · — · —
-            ',	— — · · — —
-            '?	· · — — · ·
-            '"	· — · · — ·
-            '/	— · · — ·
+
             'Class_BeepBeep.BeepCube(10, 1000, 1000, "")
             'Class_BeepBeep.BeepCube(1000, 1000, 100, "")
             'Class_BeepBeep.BeepCube(20, 5000, 1000, "")
