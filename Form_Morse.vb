@@ -407,30 +407,38 @@
 
                             Class_BeepBeep.BeepBeep(datosMT.Volumen, 936, TiempoPitidoCorto, "") ' Emitir un pitido corto.
                             Threading.Thread.Sleep(TiempoFarnsworthCorto)
+                            'Console.Beep(1000, TiempoFarnsworthCorto)
                             'Class_BeepBeep.BeepBeep(0, 936, TiempoFarnsworthCorto, "")
                                         
                         ElseIf symbol = "·"c Then ' ................
 
                             Class_BeepBeep.BeepBeep(datosMT.Volumen, 936, TiempoPitidoCorto, "") ' Emitir un pitido corto.
                             Threading.Thread.Sleep(TiempoFarnsworthCorto)
+                            'Console.Beep(1000, TiempoFarnsworthCorto)
                             'Class_BeepBeep.BeepBeep(0, 936, TiempoFarnsworthCorto, "")
+                            
                                         
                         ElseIf symbol = "-"c Then ' ---------------
 
                             Class_BeepBeep.BeepBeep(datosMT.Volumen, 936, TiempoPitidoLargo, "") ' Emitir un pitido largo.
                             Threading.Thread.Sleep(TiempoFarnsworthLargo)
+                            'Console.Beep(1000, TiempoFarnsworthLargo)
                             'Class_BeepBeep.BeepBeep(0, 936, TiempoFarnsworthLargo, "")
+                            
                                         
                         ElseIf symbol = "—" Then ' ---------------
 
                             Class_BeepBeep.BeepBeep(datosMT.Volumen, 936, TiempoPitidoLargo, "") ' Emitir un pitido largo.
                             Threading.Thread.Sleep(TiempoFarnsworthLargo)
+                            'Console.Beep(1000, TiempoFarnsworthLargo)
                             'Class_BeepBeep.BeepBeep(0, 936, TiempoFarnsworthLargo, "")
+                            
                                         
                         ElseIf symbol = " " Then
                                         
                             Threading.Thread.Sleep(TiempoEntreletras) ' Pausa entre letras.
                             'Class_BeepBeep.BeepBeep(0, 936, TiempoEntreletras, "")
+                            
                                         
                         End If
 
