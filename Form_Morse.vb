@@ -353,19 +353,31 @@
                 Indice += 1
 
 
+                'Dim TiempoPulsacion As Integer = datosMT.Velocity * 500
+                'Dim TiempoPitidoCorto As Integer = CInt(100 * datosMT.VelocityShort * datosMT.Velocity)
+                'Dim TiempoPitidoLargo As Integer = CInt(400 * datosMT.VelocityLong * datosMT.Velocity)
+                'Dim TiempoEntreletras As Integer = CInt((TiempoPulsacion * datosMT.VelocityEntreLetra))
+                'Dim TeompoEntreSignos As Integer = CInt(100 * datosMT.Velocity * datosMT.VelocityEntreSigno)
+                'Dim TiempoFarnsworthCorto As Integer = (TiempoPulsacion - TiempoPitidoCorto) / 50
+                'Dim TiempoFarnsworthLargo As Integer = (TiempoPulsacion - TiempoPitidoLargo) / 50
+
+                'Dim TeompoEntreSignos As Integer = CInt(10 * datosMT.Velocity * datosMT.VelocityEntreSigno)
+
                 Dim TiempoPulsacion As Integer = datosMT.Velocity * 500
 
                 Dim TiempoPitidoCorto As Integer = CInt(100 * datosMT.VelocityShort * datosMT.Velocity)
                 Dim TiempoPitidoLargo As Integer = CInt(400 * datosMT.VelocityLong * datosMT.Velocity)
 
-                Dim TiempoEntreletras As Integer = CInt((TiempoPulsacion * datosMT.VelocityEntreLetra))
+                'Dim TiempoEntreletras As Integer = CInt((TiempoPulsacion * datosMT.VelocityEntreLetra))
+                Dim TiempoEntreletras As Integer = CInt(400 * (datosMT.Velocity * datosMT.VelocityEntreLetra))
                 Dim TeompoEntreSignos As Integer = CInt(100 * datosMT.Velocity * datosMT.VelocityEntreSigno)
 
                 Dim TiempoFarnsworthCorto As Integer = (TiempoPulsacion - TiempoPitidoCorto) / 50
                 Dim TiempoFarnsworthLargo As Integer = (TiempoPulsacion - TiempoPitidoLargo) / 50
 
-                'Dim TeompoEntreSignos As Integer = CInt(10 * datosMT.Velocity * datosMT.VelocityEntreSigno)
 
+
+                                
                 If TiempoPulsacion <= 0 Then
                     TiempoPulsacion = 0
                 End If
