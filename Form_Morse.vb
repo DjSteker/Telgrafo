@@ -162,9 +162,6 @@
      
     End Sub
 
-
-
-
     Friend Sub ReadTextToMorse() '(ByVal datosMT As MorseTrama)
 
      
@@ -173,32 +170,6 @@
 
     Private Sub Button_BeepCube_Click(sender As Object, e As EventArgs) Handles Button_BeepCube.Click
 
-        Try
-
-            'mciSendString2("close myWAV", Nothing, 0, 0)
-            ''Dim fileName1 As String = mciSendString2("open " & fileName1 & " type mpegvideo alias myWAV", Nothing, 0, 0)
-            'Dim fileName1 As String = System.IO.Path.Combine(My.Application.Info.DirectoryPath, "Correct.wav")
-
-            'mciSendString2(String.Format("open ""{0}"" type mpegvideo alias myWAV", fileName1), Nothing, 0, 0)
-            'mciSendString2("play myWAV", Nothing, 0, 0)
-
-            'Dim SFXVolume As Int16 = 500
-            ''min Volume is 1, max Volume is 1000
-            'Dim Volume As Integer = (SFXVolume * 100)
-            'mciSendString2("setaudio myWAV volume to " & Volume, Nothing, 0, 0)
-
-
-
-
-
-        Catch ex As Exception
-
-        End Try
-
-        'Class_BeepBeep.BeepBeep(10, 1000, 1000, "")
-        'Class_BeepBeep.BeepBeep(1000, 1000, 100, "")
-        'Class_BeepBeep.BeepBeep(20, 5000, 1000, "")
-        'Class_BeepBeep.BeepBeep(20, 10000, 1000, "")
         Dim datosMorseTrama As New MorseTrama
         Try
             Dim inputText As String = TextBox1.Text.ToUpper()
@@ -214,17 +185,15 @@
                 datosMorseTrama.VelocityEntreSigno = (TrackBar_EspacioSigno.Value / 500)
                 datosMorseTrama.VelocityEntreLetra = (TrackBar_LetrasEspacio.Value / 500)
 
-
                 datosMT = datosMorseTrama
 
                 ctThread.Start()
-
-                'ctThread.Start(datosMorseTrama)
+                                    
                 Threading.Thread.Sleep(300)
             Else
                 Button_Beep.Text = "-"
                 ctThread.Abort()
-                'ctThread.Join()
+
                 Button_Beep.Text = "Beep sen"
 
             End If
@@ -238,115 +207,14 @@
     Sub EnviarMorse()
 
 
-        Try
-
-            mciSendString2("close myWAV", Nothing, 0, 0)
-            'Dim fileName1 As String = mciSendString2("open " & fileName1 & " type mpegvideo alias myWAV", Nothing, 0, 0)
-            Dim fileName1 As String = System.IO.Path.Combine(My.Application.Info.DirectoryPath, "Correct.wav")
-
-            mciSendString2(String.Format("open ""{0}"" type mpegvideo alias myWAV", fileName1), Nothing, 0, 0)
-            mciSendString2("play myWAV", Nothing, 0, 0)
-
-            Dim SFXVolume As Int16 = 500
-            'min Volume is 1, max Volume is 1000
-            Dim Volume As Integer = (SFXVolume * 100)
-            mciSendString2("setaudio myWAV volume to " & Volume, Nothing, 0, 0)
-
-
-
-
-            Dim morseCodes1 As New Dictionary(Of Char, String) From {
-    {"A"c, ".-"}, {"B"c, "-..."}, {"C"c, "-.-."}, {"D"c, "-.."},
-    {"E"c, "."}, {"F"c, "..-."}, {"G"c, "--."}, {"H"c, "...."},
-    {"I"c, ".."}, {"J"c, ".---"}, {"K"c, "-.-"}, {"L"c, ".-.."},
-    {"M"c, "--"}, {"N"c, "-."}, {"Ñ"c, "--.--"}, {"O"c, "---"},
-    {"P"c, ".--."}, {"Q"c, "--.-"}, {"R"c, ".-."}, {"S"c, "..."},
-    {"T"c, "-"}, {"U"c, "..-"}, {"V"c, "...-"}, {"W"c, ".--"},
-    {"X"c, "-..-"}, {"Y"c, "-.--"}, {"Z"c, "--.."},
-    {"0"c, "-----"}, {"1"c, "·----"}, {"2"c, "··---"}, {"3"c, "···--"}, {"4"c, "····-"}, {"5"c, "·····"}, {"6"c, "-····"}, {"7"c, "--···"}, {"8"c, "---··"}, {"9"c, "----·"},
-    {"."c, "·—·—·—"}, {","c, "——··——"}, {"?"c, "··——··"}, {""""c, "·—··—·"}, {"/"c, "—··—·"}
-}
-
-
-            'A   Asno / Árbol	· —	 	                                        N	Nota / Noche	— ·
-            'B   Bonaparte / Bogavante / Bobadilla / Bofetada	— · · ·	 	    Ñ	Ñoñopatoso / ÑoñoPecoso	— — · — —
-            'C   Coca - Cola / Corazones	— · — ·	 	                        O	Oporto / Otoño / Ozono	— — —
-            'D   Docena	— · ·	 	                                            P	Pisotones / Pilotonic / Pelotones	· — — ·
-            'e   El / Es	·	 	                                            Q	Cokoriko / Cocoliso / Cocodrilo	— — · —
-            'F   Fumarola / Faraona	· · — ·	 	                                R	Redonda / Ramona / Revólver	. — .
-            'G   Gomorra / Góndola / Gorrones / Gorrona / Golosa	— — ·	 	S	Séptima / Sevilla / Sardina	. . .
-            'H   Humareda / Himalaya / Habitante	· · · ·	 	                T	Tos	—
-            'I   Isla / Iris	· ·	 	                                        U	Untado / Único	· · —
-            'J   Jabonoso	· — — —	 	                                        V	Vandalismo / Ventilador / Vaticano	. . . —
-            'K   Kolpino / Koinor / Kosaco	— . —	 	                        W	Wadopost / Wagon-post / Windows-Dos / Wagogo	. — —
-            'L   Limonada / Limosina	· — · ·	 	                            X	Xochimilco / Xolifico / Xoricillo	— . . —
-            'M   Mozo / Mono / Moto	— —	 	                                    Y	Yonitoco / Yotesoplo / Yosimojo / Yoduroso	— · — —
-            'Z   Zocoyula / Zozobraba / ZorroLibre	— — · ·
-
-
-            'Class_BeepBeep.BeepCube(10, 1000, 1000, "")
-            'Class_BeepBeep.BeepCube(1000, 1000, 100, "")
-            'Class_BeepBeep.BeepCube(20, 5000, 1000, "")
-            'Class_BeepBeep.BeepCube(20, 10000, 1000, "")
-
-
-
-            Dim Indice As Integer = 0
-            ' Recorre cada letra en el texto y emite una señal de audio Morse correspondiente.
-            For Each c As Char In datosMT.text
-                TextBoxSelecChat(Indice)
-                Indice += 1
-                If morseCodes1.ContainsKey(c) Then
-                    Dim morseCode1 As String = morseCodes1(c)
-                    For Each symbol As Char In morseCode1
-                        If symbol = "."c Then
-                            Class_BeepBeep.BeepBeep(1000, CInt(150 * datosMT.Velocity * datosMT.VelocityShort), "") ' Emitir un pitido corto.
-                            Threading.Thread.Sleep(CInt(150 * datosMT.Velocity * datosMT.VelocityShort))
-                        ElseIf symbol = "·"c Then
-                            Class_BeepBeep.BeepBeep(1000, CInt(150 * datosMT.Velocity * datosMT.VelocityLong), "") ' Emitir un pitido corto.
-                            Threading.Thread.Sleep(CInt(150 * datosMT.Velocity * datosMT.VelocityShort))
-                        ElseIf symbol = "-"c Then
-                            Class_BeepBeep.BeepBeep(1000, CInt(700 * datosMT.Velocity * datosMT.VelocityLong), "") ' Emitir un pitido largo.
-                        ElseIf symbol = "—" Then
-                            Class_BeepBeep.BeepBeep(1000, CInt(700 * datosMT.Velocity * datosMT.VelocityLong), "") ' Emitir un pitido largo.
-                        ElseIf symbol = " " Then
-                            'Threading.Thread.Sleep(CInt(800 * datosMT.Velocity * datosMT.VelocityEntreSigno)) ' Pausa entre letras.
-                            'Console.Beep(0, CInt(800 * datosMT.Velocity * datosMT.VelocityLong))
-                            'Threading.Thread.Sleep(CInt(100 * datosMT.Velocity * datosMT.VelocityShort))
-                        End If
-
-                        'If symbol = "."c Then
-                        '    Console.Beep(1000, CInt(150 * datosMT.Velocity)) ' Emitir un pitido corto.
-                        'End If
-                        ' Pausa entre símbolos.
-                        Threading.Thread.Sleep(CInt(10 * datosMT.Velocity * datosMT.VelocityEntreSigno))
-                    Next
-                    ' Pausa entre letras.
-                    Threading.Thread.Sleep(CInt(800 * datosMT.Velocity * datosMT.VelocityEntreLetra))
-                End If
-            Next
-        Catch ex As Exception
-
-        End Try
-    End Sub
-
-#Region "Parametros"
-
-
-    Private Sub TrackBar1_Scroll(sender As Object, e As EventArgs) Handles TrackBar_Velocidad.Scroll
-        Try
-            datosMT.Velocity = (TrackBar_Velocidad.Value / 500)
-            Label_Velocidad.Text = (TrackBar_Velocidad.Value / 500)
-            'datosMT.Velocity =
-        Catch ex As Exception
-            msg(ex.Message)
-        End Try
     End Sub
 
     Private Sub TrackBar_Largas_Scroll(sender As Object, e As EventArgs) Handles TrackBar_TiempoLargas.Scroll
         Try
+                                
             datosMT.VelocityLong = (TrackBar_TiempoLargas.Value / 500)
             Label_TiempoLargas.Text = (TrackBar_TiempoLargas.Value / 500)
+                                
         Catch ex As Exception
             msg(ex.Message)
         End Try
@@ -354,8 +222,10 @@
 
     Private Sub TrackBar_EspacioSigno_Scroll(sender As Object, e As EventArgs) Handles TrackBar_EspacioSigno.Scroll
         Try
+                                
             datosMT.VelocityEntreSigno = (TrackBar_EspacioSigno.Value / 500)
             Label_EspacioSigno.Text = (TrackBar_EspacioSigno.Value / 500)
+                                
         Catch ex As Exception
             msg(ex.Message)
         End Try
@@ -363,8 +233,10 @@
 
     Private Sub TrackBar_LetrasEspacio_Scroll(sender As Object, e As EventArgs) Handles TrackBar_LetrasEspacio.Scroll
         Try
+                                
             datosMT.VelocityEntreLetra = (TrackBar_LetrasEspacio.Value / 500)
             Label_LetrasEspacio.Text = (TrackBar_LetrasEspacio.Value / 500)
+                                
         Catch ex As Exception
             msg(ex.Message)
         End Try
@@ -372,8 +244,10 @@
 
     Private Sub TrackBar_TiempoCortas_Scroll(sender As Object, e As EventArgs) Handles TrackBar_TiempoCortas.Scroll
         Try
+                                
             datosMT.VelocityShort = (TrackBar_TiempoCortas.Value / 500)
             Label_TiempoCortas.Text = (TrackBar_TiempoCortas.Value / 500)
+                                
         Catch ex As Exception
 
         End Try
@@ -381,6 +255,7 @@
 
     Private Sub TrackBar_Volumen_Scroll(sender As Object, e As EventArgs) Handles TrackBar_Volumen.Scroll
         Try
+                                
             datosMT.Volumen = (TrackBar_Volumen.Value)
             Label_Volumen.Text = (TrackBar_Volumen.Value)
 
@@ -412,12 +287,11 @@
 
                 ctThread.Start()
 
-                'ctThread.Start(datosMorseTrama)
                 Threading.Thread.Sleep(300)
+                                    
             Else
                 Button_Morse.Text = "-"
                 ctThread.Abort()
-                'ctThread.Join()
                 Button_Morse.Text = "Morse"
 
             End If
@@ -522,41 +396,39 @@
                     Dim morseCode1 As String = morseCodes1(c)
                     For Each symbol As Char In morseCode1
                         If symbol = "."c Then ' ................
-                            'TiempoPitido = CInt((datosMT.Velocity * 1100) - (150 * datosMT.VelocityShort))
+
                             Class_BeepBeep.BeepBeep(datosMT.Volumen, 936, TiempoPitidoCorto, "") ' Emitir un pitido corto.
-                            'Dim TiempoFarnsworth As Integer = CInt((datosMT.Velocity * 1000) - (TiempoPitido))
                             Threading.Thread.Sleep(TiempoFarnsworthCorto)
 
                         ElseIf symbol = "·"c Then ' ................
-                            'TiempoPitido = CInt((datosMT.Velocity * 1100) - (150 * datosMT.VelocityLong))
+
                             Class_BeepBeep.BeepBeep(datosMT.Volumen, 936, TiempoPitidoCorto, "") ' Emitir un pitido corto.
-                            'Dim TiempoFarnsworth As Integer = CInt((datosMT.Velocity * 1000) - (TiempoPitido))
                             Threading.Thread.Sleep(TiempoFarnsworthCorto)
 
                         ElseIf symbol = "-"c Then ' ---------------
-                            'TiempoPitido = CInt((datosMT.Velocity * 1100) - (300 * datosMT.VelocityLong))
+
                             Class_BeepBeep.BeepBeep(datosMT.Volumen, 936, TiempoPitidoLargo, "") ' Emitir un pitido largo.
-                            'Dim TiempoFarnsworth As Integer = CInt((datosMT.Velocity * 1000) - (TiempoPitido))
                             Threading.Thread.Sleep(TiempoFarnsworthLargo)
+                                        
                         ElseIf symbol = "—" Then ' ---------------
-                            'TiempoPitido = CInt((datosMT.Velocity * 1100) - (300 * datosMT.VelocityLong))
+
                             Class_BeepBeep.BeepBeep(datosMT.Volumen, 936, TiempoPitidoLargo, "") ' Emitir un pitido largo.
-                            'Dim TiempoFarnsworth As Integer = CInt((datosMT.Velocity * 1000) - (TiempoPitido))
                             Threading.Thread.Sleep(TiempoFarnsworthLargo)
+                                        
                         ElseIf symbol = " " Then
-                            'TiempoPitido = CInt((datosMT.Velocity * 1100) - (300 * datosMT.VelocityEntreSigno))
+                                        
                             Threading.Thread.Sleep(TiempoEntreletras) ' Pausa entre letras.
 
                         End If
 
                         ' Pausa entre símbolos.
-                        'Threading.Thread.Sleep(CInt(10 * datosMT.Velocity * datosMT.VelocityEntreSigno))
                         Threading.Thread.Sleep(TeompoEntreSignos)
 
                     Next
+                                
                     ' Pausa entre letras.
-                    'TiempoPitido = CInt((datosMT.Velocity * 1000) - (300 * datosMT.VelocityEntreLetra))
                     Threading.Thread.Sleep(CInt(TiempoEntreletras))
+                                
                 End If
             Next
         Catch ex As Exception
